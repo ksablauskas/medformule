@@ -3,20 +3,24 @@
     <CalculatorTitle
       :title="title"
     ></CalculatorTitle>
+    <CKDCalculator></CKDCalculator>
   </v-container>
 </template>
 
 <script>
 import CalculatorTitle from '@/components/CalculatorTitle.vue'
+import CKDCalculator from '@/components/CKDCalculator.vue'
 
 export default {
   components: {
-    CalculatorTitle
+    CalculatorTitle,
+    CKDCalculator
   },
   data() {
     return {
-      title: 'Įvairios skaičiuoklės medikams'
+      title: 'INKSTŲ FUNKCIJOS VERTINIMAS PAGAL GFR IR ClCr'    
     }
   }
 }
 </script>
+
