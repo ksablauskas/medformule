@@ -45,7 +45,7 @@ export default {
     return {
       drawer: false,
       links: [
-        { icon: 'folder', text: 'CKD', route: '/ckd' },
+        { icon: 'folder', text: 'CKD - suaugusiųjų', route: '/ckd' },
       ]
     }
   },
