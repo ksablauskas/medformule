@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar dark app class="deep-purple darken-3
+    <v-toolbar app class="blue darken-2
 ">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <h1 class="subheading">MENU</h1>
@@ -20,7 +20,8 @@
       </router-link >
     </v-toolbar>
 
-    <v-navigation-drawer app v-model="drawer" class="crimson">
+    <v-navigation-drawer app v-model="drawer" class="blue darken-2
+">
 
       <v-list>
         <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">

@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      title: 'INKSTŲ FUNKCIJOS VERTINIMAS PAGAL GFR IR ClCr (18 m. ir vyresniems)'    
+      title: 'Inkstų funkcijos vertinimas pagal GFR ir ClCr (18 m. ir vyresniems)'    
     }
   }
 }

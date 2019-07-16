@@ -5,7 +5,7 @@
       row wrap
     >
       <v-flex xs12>
-        <h1 class="display-1 text-xs-center mt-2">{{displayTitle}}</h1>
+        <h1 class="display-1 font-weight-light text-xs-center mt-2">{{displayTitle}}</h1>
       </v-flex>
     </v-layout>
   </v-container>
@@ -16,7 +16,7 @@ export default {
   props: ['title'],
   data() {
     return {
-      displayTitle: this.title.toUpperCase()
+      displayTitle: this.title
     }
   }
 }

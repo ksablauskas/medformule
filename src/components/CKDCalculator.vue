@@ -11,6 +11,17 @@
       :resultvalue="ckdCreatinine"
       :resultcolor="ckdCreatinineColor"
       :resultitle="'CKD-EPI KREATININAS (eGFR)'"
+      :resultmeaning="ckdCreatinineStage"
+      :units="'mL/min/1.73 m²'"
+    >
+    </Result>
+
+    <Result
+      :resultvalue="cochroftGault"
+      :resultcolor="cochroftGaultColor"
+      :resultitle="'COCKCROFT-GAULT (CrCl)'"
+      :resultmeaning="cochroftGaultStage"
+      :units="'mL/min'"
     >
     </Result>
   </v-container>
@@ -45,7 +56,7 @@ export default {
         ],
         serumCreatinine: {name: 'Serumo kreatininas', units: '(μmol/l)', value: 100},
         age: {name: 'Amžius', units: '(metai)', value: 18},
-        weight: {name: 'Svoris', units: '(kg)', value: 0},
+        weight: {name: 'Svoris', units: '(kg)', value: 65},
         errorMessages: {
           invalidAge: 'Amžius turi būti 18 arba daugiau metų. Jaunesniems nei 18 metų asmenims naudokite pediatrinę CKD skačiuoklę.',
           invalidCreatinine: 'Serumo kreatinino koncentracija turi būti didesnė nei 0 μmol/l.',
@@ -55,6 +66,22 @@ export default {
   methods: {
     updateCountFn: function() {
       console.log('yo')
+    },
+    getStageName: function(score) {
+      if(score >= 90){return 'I stadija'}
+      else if(score >= 60 && score < 90){return 'II stadija'}
+      else if(score >= 30 && score < 60){return 'III stadija'}
+      else if(score >= 15 && score < 30){return 'IV stadija'}
+      else if(score < 15){return 'V stadija'}
+      else {return ''}
+    },
+    getStageColor: function(score) {
+      if(score >= 90){return 'green'}
+      else if(score >= 60 && score < 90){return 'yellow darken-2'}
+      else if(score >= 30 && score < 60){return 'orange'}
+      else if(score >= 15 && score < 30){return 'deep-orange darken-1'}
+      else if(score < 15){return 'red darken-4'}
+      else {return 'grey'}
     }
   },
   computed: {
@@ -95,16 +122,58 @@ export default {
       return score
 
     },
+    ckdCystatine: function() {
+      if (this.inputControl.length > 0){
+        return '-'
+      }
+
+      let score = 0
+
+      // TODO: Add CYSTATINE
+      let cy = this.serumCreatinine.value
+      let a = this.age.value
+      let g = this.genderArray.find(obj => {
+        return obj.active === true
+      })
+
+      if(g.name == 'moteris' && cy <= 0.8){score = 133*(Math.pow((cy/0.8), -0.499)*Math.pow(0.999, a))*0.932};
+      if(g.name == 'moteris' && cy > 0.8){score = 133*(Math.pow((cy/0.8), -1.328)*Math.pow(0.996, a))*0.932};
+      if(g.name == 'vyras' && cy <= 0.8){score = 133*(Math.pow((cy/0.8), -0.499)*Math.pow(0.996, a))};
+      if(g.name == 'vyras' && cy > 0.8){score = 133*(Math.pow((cy/0.8), -1.328)*Math.pow(0.996, a))};
+
+      score = score.toFixed(2)
+      return score
+    },
+    cochroftGault(){
+      if (this.inputControl.length > 0){
+        return '-'
+      }
+
+      let score = 0
+      let cr = this.serumCreatinine.value
+      let a = this.age.value
+      let w = this.weight.value
+      let g = this.genderArray.find(obj => {
+        return obj.active === true
+      })
+
+      score = ((140 - a) * w) / (0.815 * cr);
+      if(g.name == 'moteris'){score = score*0.85};
+
+      score = score.toFixed(2)
+      return score
+    },
+    ckdCreatinineStage: function() {
+      return this.getStageName(this.ckdCreatinine)
+    },
     ckdCreatinineColor: function() {
-      let score = this.ckdCreatinine
-
-      if(score >= 90){return 'green'}
-      else if(score >= 60 && score < 90){return 'yellow darken-2'}
-      else if(score >= 30 && score < 60){return 'orange'}
-      else if(score >= 15 && score < 30){return 'deep-orange darken-1'}
-      else if(score < 15){return 'red darken-4'}
-      else {return 'grey'}
-
+      return this.getStageColor(this.ckdCreatinine)
+    },
+    cochroftGaultStage: function() {
+      return this.getStageName(this.cochroftGault)
+    },
+    cochroftGaultColor: function() {
+      return this.getStageColor(this.cochroftGault)
     },
   },
 }

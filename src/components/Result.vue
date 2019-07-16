@@ -3,10 +3,19 @@
         <v-layout
             row wrap
             justify-center
-            my-2
+            mt-2
         >
 
             <span class="title">{{resultitle}}</span>
+
+        </v-layout>
+
+         <v-layout
+            row wrap
+            justify-center
+            mb-2
+        >
+            <span class="caption">{{units}}</span>
 
         </v-layout>
 
@@ -21,6 +30,16 @@
             </v-flex>
             
         </v-layout>
+
+        <v-layout
+            row wrap
+            justify-center
+            my-2
+        >
+
+            <span class="title">{{resultmeaning}}</span>
+            
+        </v-layout>
         
     </v-container>
 </template>
@@ -31,6 +50,8 @@ export default {
     'resultvalue',
     'resultcolor',
     'resultitle',
+    'resultmeaning',
+    'units',
     ],
   data() {
     return {
