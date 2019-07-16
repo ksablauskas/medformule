@@ -4,7 +4,7 @@
       row wrap
       justify-center
     >
-      <v-flex xs6 md3 v-for="option in options"
+      <v-flex xs6 md3 px-1 v-for="option in options"
             :key="option.id">
           <v-btn large 
             @click="setActive(option.id)"

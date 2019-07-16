@@ -1,7 +1,6 @@
 <template>
   <nav>
-    <v-toolbar app class="blue darken-2
-">
+    <v-toolbar app class="blue darken-2">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <h1 class="subheading">MENU</h1>
       <v-spacer></v-spacer>
