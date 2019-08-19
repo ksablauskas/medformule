@@ -1,14 +1,12 @@
 <template>
-  <v-container>
     <v-layout
-      text-xs-center
       row wrap
+      my-2
     >
       <v-flex xs12>
-        <h1 class="display-1 font-weight-light mt-2">{{displayTitle}}</h1>
+        <h3 class="font-weight-regular">{{title}}</h3>
       </v-flex>
     </v-layout>
-  </v-container>
 </template>
 
 <script>
@@ -16,7 +14,6 @@ export default {
   props: ['title'],
   data() {
     return {
-      displayTitle: this.title
     }
   }
 }

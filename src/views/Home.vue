@@ -34,6 +34,8 @@ export default {
         {id:0, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'orange', link: '/ckd'},
         {id:1, title: 'GFG ir kreatinino klirensas (vaikų)', color: 'blue darken-2', link: '/ckd-pediatric'},
         {id:2, title: 'SCORE', color: 'green', link: '/score'},
+        {id:3, title: 'Trombolizė / trombektomija', color: 'error', link: '/stroke'},
+
         // {id:3, title: 'GFG ir kreatinino klirensas asd asd asdd as d', color: 'red darken-2', link: '/ckd'},
         // {id:4, title: 'GFG ir kreatinino klirensas asd asd asdd as d', color: 'orange', link: '/ckd'},
         // {id:5, title: 'GFG ir kreatinino klirensas asd asd asdd as d', color: 'orange', link: '/ckd'},

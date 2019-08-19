@@ -25,6 +25,5 @@ export default {
 <style>
 .selection-button {
     height: 120px;
-    /* font-size: 32px; */
 }
 </style>

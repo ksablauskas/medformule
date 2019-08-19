@@ -2,13 +2,14 @@
     <v-layout
       text-xs-center
       row wrap
-      justify-center
+      justify-left
     >
-      <v-flex xs6 md3 px-1 v-for="option in options"
+      <v-flex xs6 md2 mx-1 px-1 v-for="option in options"
             :key="option.id">
           <v-btn large 
             @click="setActive(option.id)"
             :color="option.color"
+            block
             >
               {{ option.name }}
           </v-btn>

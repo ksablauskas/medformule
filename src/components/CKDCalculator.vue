@@ -2,6 +2,7 @@
   <v-container>
     <ButtonSelector :options="genderArray"></ButtonSelector>
     <ButtonSelector :options="raceArray"></ButtonSelector>
+
     <NumberField :numberdata.sync="serumCreatinine"></NumberField>
     <NumberField :numberdata.sync="age"></NumberField>
     <NumberField :numberdata.sync="weight"></NumberField>
@@ -24,6 +25,13 @@
       :units="'mL/min'"
     >
     </Result>
+
+    <v-container>
+      <Reference v-for="reference in references"
+      :key="reference.id"
+      :text="reference.text"
+    ></Reference>
+    </v-container>    
   </v-container>
 </template>
 
@@ -32,6 +40,7 @@ import ButtonSelector from '@/components/ButtonSelector'
 import NumberField from '@/components/NumberField'
 import Result from '@/components/Result'
 import InputError from '@/components/InputError'
+import Reference from '@/components/Reference'
 
 export default {
   components: {
@@ -39,6 +48,7 @@ export default {
     NumberField,
     Result,
     InputError,
+    Reference,
   },
   data() {
     return {
@@ -61,6 +71,14 @@ export default {
           invalidAge: 'Amžius turi būti 18 arba daugiau metų. Jaunesniems nei 18 metų asmenims naudokite pediatrinę CKD skačiuoklę.',
           invalidCreatinine: 'Serumo kreatinino koncentracija turi būti didesnė nei 0 μmol/l.',
         },
+        references: [
+          {id: 0, text: "Apskaičiuotasis glomerulų filtracijos greitis - CKD-EPI CREATININE EQ (2009)"},
+          {id: 1, text: "Kreatinino klirensas - COCKCROFT-GAULT (1976)"},
+          {id: 2, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
+          {id: 3, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
+          {id: 4, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
+
+        ],
     }
   },
   methods: {
