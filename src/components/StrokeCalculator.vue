@@ -3,7 +3,7 @@
 
     <v-container>
       <v-layout row wrap>
-        <v-flex xs6 md2 mx-1>
+        <v-flex xs12 md2 mx-1>
           <v-layout row text-xs-center justify-center>
             <h3>ATVEJO PROGRESAS</h3>
           </v-layout>
