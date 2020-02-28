@@ -35,8 +35,10 @@ export default {
         // {id:1, title: 'GFG ir kreatinino klirensas (vaikų)', color: 'blue darken-2', link: '/ckd-pediatric'},
         // {id:2, title: 'SCORE', color: 'green', link: '/score'},
         // {id:3, title: 'Trombolizė / trombektomija', color: 'error', link: '/stroke'},
+        {id:4, title: 'Visuomenei COVID-19', color: 'orange', link: '/corona_society'},
         {id:4, title: 'COVID-19 GMP', color: 'green', link: '/corona_ems'},
-        {id:5, title: 'COVID-19 priežiūra ligoninėje', color: 'purple', link: '/corona_hospital'},
+        {id:5, title: 'COV-19 tepinėlis ir ambulatorinė priežiūra', color: 'blue', link: '/corona_outpatient'},
+        {id:6, title: 'COVID-19 priežiūra ligoninėje', color: 'purple', link: '/corona_hospital'},
 
         // {id:3, title: 'GFG ir kreatinino klirensas asd asd asdd as d', color: 'red darken-2', link: '/ckd'},
         // {id:4, title: 'GFG ir kreatinino klirensas asd asd asdd as d', color: 'orange', link: '/ckd'},

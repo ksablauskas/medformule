@@ -103,7 +103,7 @@ export default {
         return obj.active === true
       })
 
-      if (lymphocyteCount === undefined){
+      if (lymphocyteCount === undefined || (lymphocyteCount !== undefined  && lymphocyteCount === 'Ne')){
         return false
       }
 
