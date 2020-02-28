@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 import CKD from './views/CKD.vue'
 import Stroke from './views/Stroke.vue'
 import CoronaEMS from './views/CoronaEMS.vue'
+import CoronaHospital from './views/CoronaHospital.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/corona_ems',
       name: 'corona_ems',
       component: CoronaEMS
-    }      
+    },
+    {
+      path: '/corona_hospital',
+      name: 'corona_hospital',
+      component: CoronaHospital
+    }        
   ]
 })
