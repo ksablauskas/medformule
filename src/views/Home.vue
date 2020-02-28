@@ -3,7 +3,9 @@
     <CalculatorTitle
       :title="title"
     ></CalculatorTitle>
-
+    <br>
+    <h2 class='red'>Dėmesio - algoritmai koreguojami. Dėl sprendimų susijusių su jūsų sveikata kreipkitės į jus prižiūrintį gydytoją.</h2>
+    <br>
     <v-layout row wrap>
 
       <CalculatorSelectionButton v-for="calculator in calculators"
