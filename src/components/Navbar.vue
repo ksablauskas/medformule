@@ -1,8 +1,8 @@
 <template>
   <nav>
     <v-toolbar app class="blue darken-2">
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <h1 class="subheading">MENU</h1>
+      <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
+        <h1 class="subheading">MENU</h1> -->
       <v-spacer></v-spacer>
 
       <router-link to="/about" tag="v-btn">
@@ -19,7 +19,7 @@
       </router-link >
     </v-toolbar>
 
-    <v-navigation-drawer app v-model="drawer" class="blue darken-2
+    <!-- <v-navigation-drawer app v-model="drawer" class="blue darken-2
 ">
 
       <v-list>
@@ -35,7 +35,7 @@
         </v-list-tile>
       </v-list>
 
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
   </nav>
 </template>
 <script>

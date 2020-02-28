@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 
 import CKD from './views/CKD.vue'
 import Stroke from './views/Stroke.vue'
+import CoronaEMS from './views/CoronaEMS.vue'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/stroke',
       name: 'stroke',
       component: Stroke
-    }     
+    },
+    {
+      path: '/corona_ems',
+      name: 'corona_ems',
+      component: CoronaEMS
+    }      
   ]
 })

@@ -2,7 +2,7 @@
     <v-container>
         <v-layout
             row wrap
-            justify-center
+            justify-left
             mt-2
         >
 
@@ -12,7 +12,7 @@
 
          <v-layout
             row wrap
-            justify-center
+            justify-left
             mb-2
         >
             <span class="caption">{{units}}</span>
@@ -21,11 +21,11 @@
 
         <v-layout
             row wrap
-            justify-center
+            justify-left
             my-2
         >
 
-            <v-flex xs4 md2 center py-4 px-2 :class="`${resultcolor} text-xs-center`">
+            <v-flex xs12 md6 left py-4 px-2 :class="`${resultcolor} text-xs-left`">
                 <span class="headline font-weight-bold">{{resultvalue}}</span>
             </v-flex>
             
@@ -33,7 +33,7 @@
 
         <v-layout
             row wrap
-            justify-center
+            justify-left
             my-2
         >
 

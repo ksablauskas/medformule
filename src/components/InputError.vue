@@ -1,7 +1,7 @@
 <template>
         <v-layout
             row wrap
-            justify-center
+            justify-left
             py-2
         >
             <v-flex xs12 md6 px-2 py-1 class="error text-xs-center">
