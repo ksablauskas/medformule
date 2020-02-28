@@ -8,6 +8,7 @@ import CoronaEMS from './views/CoronaEMS.vue'
 import CoronaHospital from './views/CoronaHospital.vue'
 import CoronaSociety from './views/CoronaSociety.vue'
 import CoronaOutpatient from './views/CoronaOutpatient.vue'
+import About from './views/About.vue'
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/corona_outpatient',
       name: 'corona_outpatient',
       component: CoronaOutpatient
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     }        
   ]
 })

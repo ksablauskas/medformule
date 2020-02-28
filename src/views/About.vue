@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1></h1>
-  </div>
+  <v-container>
+    <br><br>
+    <br><br>
+    <br><br>
+    <h1>Sukurta pagal:</h1>
+    
+    <a href="https://bit.ly/39d978Y">Respulikinės Šiaulių ligoninės specialistų parengtus algoritmus</a>
+    <v-container>
+      <iframe src="https://drive.google.com/file/d/1Np-L73a3Rpl4tLcL3Bn_RJ8gcHhaSMYJ/preview" width="1024" height="600"></iframe>
+    </v-container>
+    
+  </v-container>
 </template>
