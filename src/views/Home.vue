@@ -37,7 +37,7 @@ export default {
         {id:1, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'orange', link: '/ckd'},
         
         // {id:2, title: 'SCORE', color: 'green', link: '/score'},
-        // {id:3, title: 'Trombolizė / trombektomija', color: 'error', link: '/stroke'},
+        {id:3, title: 'COVID-19 bendra gydymo taktika', color: 'error', link: '/covid'},
         // {id:4, title: 'Visuomenei COVID-19', color: 'orange', link: '/corona_society'},
         // {id:4, title: 'COVID-19 GMP', color: 'green', link: '/corona_ems'},
         // {id:5, title: 'COV-19 tepinėlis ir ambulatorinė priežiūra', color: 'blue', link: '/corona_outpatient'},

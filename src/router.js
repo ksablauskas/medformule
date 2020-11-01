@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 
 import CKD from './views/CKD.vue'
 import NEWS from './views/NEWS.vue'
+import CovidCare from './views/CovidCare.vue'
 import Stroke from './views/Stroke.vue'
 import CoronaEMS from './views/CoronaEMS.vue'
 import CoronaHospital from './views/CoronaHospital.vue'
@@ -31,6 +32,11 @@ export default new Router({
       path: '/news',
       name: 'news',
       component: NEWS
+    },
+    {
+      path: '/covid',
+      name: 'covid',
+      component: CovidCare
     },
     {
       path: '/stroke',
