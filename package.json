@@ -7,7 +7,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "run": "node index.js"
+    "run": "node index.js",
+    "start": "node index.js"
   },
   "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
   "start": "node server.js",
