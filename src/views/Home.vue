@@ -4,7 +4,7 @@
       :title="title"
     ></CalculatorTitle>
     <br>
-    <h2 class='red'>Dėmesio - algoritmai koreguojami. Dėl sprendimų susijusių su jūsų sveikata kreipkitės į jus prižiūrintį gydytoją.</h2>
+    <h2 class='red'>Dėmesio - svetainė skirta naudoti tik sveikatos priežiūros specialistams.</h2>
     <br>
     <v-layout row wrap>
 
@@ -31,16 +31,17 @@ export default {
   },
   data() {
     return {
-      title: 'COVID-19 algoritmai',
+      title: 'Skaičiuoklės medikams',
       calculators: [
-        // {id:0, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'orange', link: '/ckd'},
-        // {id:1, title: 'GFG ir kreatinino klirensas (vaikų)', color: 'blue darken-2', link: '/ckd-pediatric'},
+        {id:0, title: 'NEWS', color: 'blue darken-2', link: '/news'},
+        {id:1, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'orange', link: '/ckd'},
+        
         // {id:2, title: 'SCORE', color: 'green', link: '/score'},
         // {id:3, title: 'Trombolizė / trombektomija', color: 'error', link: '/stroke'},
-        {id:4, title: 'Visuomenei COVID-19', color: 'orange', link: '/corona_society'},
-        {id:4, title: 'COVID-19 GMP', color: 'green', link: '/corona_ems'},
-        {id:5, title: 'COV-19 tepinėlis ir ambulatorinė priežiūra', color: 'blue', link: '/corona_outpatient'},
-        {id:6, title: 'COVID-19 priežiūra ligoninėje', color: 'purple', link: '/corona_hospital'},
+        // {id:4, title: 'Visuomenei COVID-19', color: 'orange', link: '/corona_society'},
+        // {id:4, title: 'COVID-19 GMP', color: 'green', link: '/corona_ems'},
+        // {id:5, title: 'COV-19 tepinėlis ir ambulatorinė priežiūra', color: 'blue', link: '/corona_outpatient'},
+        // {id:6, title: 'COVID-19 priežiūra ligoninėje', color: 'purple', link: '/corona_hospital'},
 
         // {id:3, title: 'GFG ir kreatinino klirensas asd asd asdd as d', color: 'red darken-2', link: '/ckd'},
         // {id:4, title: 'GFG ir kreatinino klirensas asd asd asdd as d', color: 'orange', link: '/ckd'},

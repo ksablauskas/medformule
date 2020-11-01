@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 
 import CKD from './views/CKD.vue'
+import NEWS from './views/NEWS.vue'
 import Stroke from './views/Stroke.vue'
 import CoronaEMS from './views/CoronaEMS.vue'
 import CoronaHospital from './views/CoronaHospital.vue'
@@ -25,6 +26,11 @@ export default new Router({
       path: '/ckd',
       name: 'ckd',
       component: CKD
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: NEWS
     },
     {
       path: '/stroke',
