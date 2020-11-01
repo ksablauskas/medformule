@@ -78,15 +78,43 @@
       <v-container>
         <ul>
         <li v-for="point in item.points"
-            :key="point.pointText">{{point.pointText}}
+            :key="point.pointText">
+            <span v-html='point.pointText'></span>
             <ul  v-if="point.subpoints.length > 0">
-              <li v-for="subpoint in point.subpoints">{{subpoint}}</li>
+              <li v-for="subpoint in point.subpoints"><v-html>{{subpoint}}</v-html></li>
             </ul>
         </li>
         </ul>
       </v-container>
     </v-expansion-panel-content>
     </v-expansion-panel>
+
+    <v-container>
+      <h3>SPECIFINIS GYDYMAS</h3>
+    </v-container>
+
+    <v-expansion-panel>
+    <v-expansion-panel-content
+      v-for="item in specificTreatment"
+      :key="item.title"
+    >
+      <template v-slot:header>
+        <h3>{{item.title}}</h3>
+      </template>
+      <v-container>
+        <ul>
+        <li v-for="point in item.points"
+            :key="point.pointText">
+            <span v-html='point.pointText'></span>
+            <ul  v-if="point.subpoints.length > 0">
+              <li v-for="subpoint in point.subpoints"><v-html>{{subpoint}}</v-html></li>
+            </ul>
+        </li>
+        </ul>
+      </v-container>
+    </v-expansion-panel-content>
+    </v-expansion-panel>
+
 
   </v-container>
 </template>
@@ -218,7 +246,88 @@ export default {
           subpoints:[
           ]},
         ]},
-      ]
+        {title:'ANTIPIRETIKAI',
+        points:[
+          {pointText:'Paracetamolis – mažiausia efektyvi dozė.',
+          subpoints:[
+          ]},
+        ]},
+        {title:'DEGUONIES TERAPIJA',
+        points:[
+          {pointText:'Jauniems pacientams SpO2 <95%.',
+          subpoints:[
+          ]},
+          {pointText:'Vyresniems pacientams SpO2<92-93%.',
+          subpoints:[
+          ]},
+          {pointText:'Svarbu titruoti dozę pagal efektą: O2 ir pakilus SpO2 >97% – O2 galima mažinti.',
+          subpoints:[
+          ]},
+          {pointText:'Titruojant pagal arterines kraujo dujas, palaikyti PaO2>60mmHg.',
+          subpoints:[
+          ]},
+          {pointText:'Atsargiai skirti O2 terapiją sergantiems lėtine obstrukcine plaučių liga dėl hiperkapnijos pavojaus (šiems pacientams monitoruoti arterines kraujo dujas).',
+          subpoints:[
+          ]},
+        ]},
+        {title:'ARTERINĖS KRAUJO DUJOS',
+        points:[
+          {pointText:'Indikacijos:',
+          subpoints:[
+            'SpO2 <93%, skiriant 5 l/min O2;',
+            'Kvėpavimo dažnis >20 k/min kvėpuojant 5 l/min O2;',
+            'Skiriamo O2 titravimas sergantiems LOPL (deguonį skirti atsargiai, titruoti dėl hiperkapnijos).',
+          ]},
+          {pointText:'<a href="https://www.nejm.org/doi/full/10.1056/NEJMvcm0803851">Kaip atlikti?</a>',
+          subpoints:[
+          ]},
+        ]},
+      ],
+      specificTreatment: [
+        {title:'LENGVA FORMA BE PNEUMONIJOS IR BE DEGUONIES POREIKIO',
+        points:[
+          {pointText:'Simptominis gydymas',
+          subpoints:[
+          ]},
+        ]},
+        {title:'VIRUSINĖ PNEUMONIJA BE DEGUONIES POREIKIO AR LOW-FLOW POREIKIS',
+        points:[
+          {pointText:'Skiriamas Remdesiviras, dėl paskyrimo sprendžia konsiliumas.',
+          subpoints:[
+          ]},
+          {pointText:'Remdesiviro schema (1 kartą per dieną):',
+          subpoints:[
+            '1 diena: 200 mg Remdesiviro skiesti su 250 ml NaCl 0,9%; lašinti į veną per 30-120 min.',
+            '2-5 dienos: 100 mg Remdesiviro skiesti su 250 ml NaCl 0,9%, lašinti į veną per 30-120 min.'
+          ]},
+        ]},
+        {title:'VIRUSINĖ PNEUMONIJA SU DEGUONIES POREIKIU',
+        points:[
+          {pointText:'Skiriamas Deksametazonas. Įrodyta, jog 10 dienų mažų dozių Deksametazono kursas gerina ligos išeitis.',
+          subpoints:[
+          ]},
+          {pointText:'Deksametazono schema (1 kartą per dieną):',
+          subpoints:[
+            '6 mg Deksametazono per os ar į veną (galima skirti bolus ar lašinti su nedideliu kiekiu NaCl 0,9%) 1 kartą per dieną 10 dienų iš eilės.'
+          ]},
+          {pointText:'Deksametazono skyrimo metu atkreipti dėmesį į:',
+          subpoints:[
+            'Glikemiją (ypač CD sergantiems pacientams) - gliukozės monitoravimas 3 k/d.',
+            'AKS (ypač hipertenzija sergantiems pacientams).',
+            'Sujaudinimą (skirti pirmoje dienos pusėje).',
+            'VT dirginimą (papildomai skirti Omeprazolį profilaktikai)'
+          ]},
+        ]},
+        {title:'IMUNOSUPRESUOTI PACIENTAI',
+        points:[
+          {pointText:'Atliekami SARS-CoV-2 IgG ir IgM antikūnai (ELISA metodu).',
+          subpoints:[
+          ]},
+          {pointText:'Jei jų neaptinkama, konsiliumo būdu sprendžiama dėl imuninės plazmos skyrimo indikacijų.',
+          subpoints:[
+          ]},
+        ]},
+      ],
     }
   }
 }
