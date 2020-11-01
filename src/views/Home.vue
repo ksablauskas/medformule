@@ -33,11 +33,12 @@ export default {
     return {
       title: 'Skaičiuoklės medikams',
       calculators: [
-        {id:0, title: 'NEWS', color: 'blue darken-2', link: '/news'},
-        {id:1, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'orange', link: '/ckd'},
+        {id:0, title: 'COVID-19 bendra gydymo taktika', color: 'blue darken-2', link: '/covid'},
+        {id:1, title: 'NEWS', color: 'orange', link: '/news'},
+        {id:2, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'green', link: '/ckd'},
         
         // {id:2, title: 'SCORE', color: 'green', link: '/score'},
-        {id:3, title: 'COVID-19 bendra gydymo taktika', color: 'error', link: '/covid'},
+        
         // {id:4, title: 'Visuomenei COVID-19', color: 'orange', link: '/corona_society'},
         // {id:4, title: 'COVID-19 GMP', color: 'green', link: '/corona_ems'},
         // {id:5, title: 'COV-19 tepinėlis ir ambulatorinė priežiūra', color: 'blue', link: '/corona_outpatient'},
