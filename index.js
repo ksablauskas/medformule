@@ -1,18 +1,23 @@
-let servestatic = require('serve-static')
-let path = require('path')
-let express = require('express')
-let port = process.env.PORT || 3000;
-let app = express();
-if(process.env.NODE_ENV === 'production'){
-    app.use(servestatic(path.join(path.resolve(), 'dist')));
-}
-app.listen(port, () => {console.log("API server started on "+app.get('port'));});
+const express = require('express');
+const path = require('path');
+const history = require('connect-history-api-fallback');
 
-// let router = express.Router();
-// // router.get("/",  );
+const app = express();
 
-// app.use("/", router);
-// // router.use((req, res, next) => {
-// //     res.setHeader('Content-Type', 'application/json');
-// //     next();
-// // }   
+const staticFileMiddleware = express.static(path.join(__dirname + '/dist'));
+
+app.use(staticFileMiddleware);
+app.use(history({
+  disableDotRule: true,
+  verbose: true
+}));
+app.use(staticFileMiddleware);
+
+app.get('/', function (req, res) {
+  res.render(path.join(__dirname + '/dist/index.html'));
+});
+
+var server = app.listen(process.env.PORT || 8080, function () {
+  var port = server.address().port;
+  console.log("App now running on port", port);
+});
