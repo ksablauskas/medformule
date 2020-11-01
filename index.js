@@ -8,10 +8,11 @@ if(process.env.NODE_ENV === 'production'){
 }
 app.listen(port, () => {console.log("API server started on "+app.get('port'));});
 
-let router = express.Router();
-router.get("/users", ...);
-app.use("/api", router);
-router.use((req, res, next) => {
-    res.setHeader('Content-Type', 'application/json');
-    next();
-}   
+// let router = express.Router();
+// // router.get("/",  );
+
+// app.use("/", router);
+// // router.use((req, res, next) => {
+// //     res.setHeader('Content-Type', 'application/json');
+// //     next();
+// // }   
