@@ -30,6 +30,9 @@
       :units="''"
     >
     </Result>
+    <ul>
+      <li v-for="comment in NEWSComments">{{comment}}</li>
+    </ul>
 
     <!-- <Result
       :resultvalue="cochroftGault"
@@ -127,7 +130,6 @@ export default {
           // {id: 2, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
           // {id: 3, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
           // {id: 4, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
-
         ],
     }
   },
@@ -136,22 +138,33 @@ export default {
   //     console.log('yo')
   //   },
     getStageName: function(score, singleAbnormal) {
-      // return 'seniuk'
-      if (singleAbnormal === true){return 'Pastovus monitoravimas (bent vieno rodiklio vertė yra 3).'}
-      else if (score === ''){return 'Užpildykite visus laukelius'}
+      if (score === ''){return 'Užpildykite visus laukelius'}
       else if(score == 0){return 'Monitoravimas kas 12 val'}
+      else if((score >= 1 && score < 7) && singleAbnormal){return 'Monitoravimas kas 1 val (bent vieno rodiklio vertė yra 3)'}
       else if(score >= 1 && score < 5){return 'Monitoravimas kas 4-6 val'}
       else if(score >= 5 && score < 7){return 'Monitoravimas kas 1 val'}
       else if(score >= 7){return 'Pastovus monitoravimas'}
-      // else if(score >= 30 && score < 60){return 'III stadija'}
-      // else if(score >= 15 && score < 30){return 'IV stadija'}
-      // else if(score < 15){return 'V stadija'}
-      // else {return ''}
+    },
+    getStageComments: function(score, singleAbnormal){
+      if (score === ''){return []}
+      else if(score == 0){return ['Vertinti NEWS kiekvieno stebėjimo metu.']}
+      else if((score >= 1 && score < 7) && singleAbnormal){return [
+        'Skubiai informuoti gydytoją (bent vieno rodiklio vertė yra 3)',
+        'Gydytojas įvertina būklę skubos tvarka']}
+      else if(score >= 1 && score < 5){return ['Svarstyti dėl dažnesnio monitoravimo ir gydymo taktikos intensyvinimo.']}
+      else if(score >= 5 && score < 7){return [
+        'Skubiai informuoti gydytoją',
+        'Gydytojas įvertina būklę skubos tvarka']}
+      else if(score >= 7){return [
+        'Nedelsiant informuoti gydytoją',
+        'Gydytojas įvertina būklę skubos tvarka',
+        'Skubi RITS konsultacija',
+      ]}
     },
     getStageColor: function(score, singleAbnormal) {
-      if (singleAbnormal === true){return 'red'}
-      else if (score === ''){return 'grey'}
+      if (score === ''){return 'grey'}
       else if(score == 0){return 'grey'}
+      else if((score >= 1 && score < 7) && singleAbnormal){return 'orange'}
       else if(score >= 1 && score < 5){return 'green'}
       else if(score >= 5 && score < 7){return 'orange'}
       else if(score >= 7){return 'red'}
@@ -269,6 +282,9 @@ export default {
     },
     NEWSStage: function() {
       return this.getStageName(this.NEWS, this.NEWSSingleAbnormal)
+    },
+    NEWSComments: function() {
+      return this.getStageComments(this.NEWS, this.NEWSSingleAbnormal)
     },
     NEWSColor: function() {
       return this.getStageColor(this.NEWS, this.NEWSSingleAbnormal)
