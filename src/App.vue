@@ -8,11 +8,9 @@
         justify-center
         row
         wrap
+        px-4
       >
-      <v-chip color='red lighten-4' outline>
-      <v-icon>error</v-icon>
-      Dėmesio - svetainė skirta naudoti tik sveikatos priežiūros specialistams.
-      </v-chip>
+      <p >Dėmesio - svetainė skirta naudoti tik sveikatos priežiūros specialistams.</p>
        </v-layout>
     </v-footer>
   </v-app>
