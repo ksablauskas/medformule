@@ -4,8 +4,7 @@
       :title="title"
     ></CalculatorTitle>
     <br>
-    <h2 class='red'>Dėmesio - svetainė skirta naudoti tik sveikatos priežiūros specialistams.</h2>
-    <br>
+    
     <v-layout row wrap>
 
       <CalculatorSelectionButton v-for="calculator in calculators"
@@ -17,6 +16,7 @@
       </CalculatorSelectionButton>
 
     </v-layout>
+
   </v-container>
 </template>
 
@@ -33,9 +33,11 @@ export default {
     return {
       title: 'Skaičiuoklės medikams',
       calculators: [
-        {id:0, title: 'COVID-19 bendra gydymo taktika', color: 'blue darken-2', link: '/covid'},
-        {id:1, title: 'NEWS', color: 'orange', link: '/news'},
-        {id:2, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'green', link: '/ckd'},
+        {id:0, title: 'COVID-19 hospitalizacijos kriterijai', color: 'red lighten-1', link: '/hospitalization'},
+        {id:1, title: 'COVID-19 bendra gydymo taktika', color: 'blue darken-2', link: '/covid'},
+        {id:2, title: 'NEWS', color: 'orange', link: '/news'},
+        {id:3, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'green', link: '/ckd'},
+        
         
         // {id:2, title: 'SCORE', color: 'green', link: '/score'},
         

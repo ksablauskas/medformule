@@ -7,7 +7,7 @@ import NEWS from './views/NEWS.vue'
 import CovidCare from './views/CovidCare.vue'
 import Stroke from './views/Stroke.vue'
 import CoronaEMS from './views/CoronaEMS.vue'
-import CoronaHospital from './views/CoronaHospital.vue'
+import CoronaHospitalization from './views/CoronaHospitalization.vue'
 import CoronaSociety from './views/CoronaSociety.vue'
 import CoronaOutpatient from './views/CoronaOutpatient.vue'
 import About from './views/About.vue'
@@ -34,6 +34,11 @@ export default new Router({
       component: NEWS
     },
     {
+      path: '/hospitalization',
+      name: 'hospitalization',
+      component: CoronaHospitalization
+    },
+    {
       path: '/covid',
       name: 'covid',
       component: CovidCare
@@ -48,11 +53,11 @@ export default new Router({
       name: 'corona_ems',
       component: CoronaEMS
     },
-    {
-      path: '/corona_hospital',
-      name: 'corona_hospital',
-      component: CoronaHospital
-    },
+    // {
+    //   path: '/corona_hospital',
+    //   name: 'corona_hospital',
+    //   component: CoronaHospital
+    // },
     {
       path: '/corona_society',
       name: 'corona_society',
