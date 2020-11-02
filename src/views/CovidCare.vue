@@ -386,6 +386,11 @@ export default {
           {pointText:'Svarstyti dėl Remdesiviro skyrimo. Aptarti konsiliume.',
           subpoints:[
           ]},
+          {pointText:'Remdesiviro schema (1 kartą per dieną):',
+          subpoints:[
+            '1 diena: 200 mg Remdesiviro skiesti su 250 ml NaCl 0,9%; lašinti į veną per 30-120 min.',
+            '2-5 dienos: 100 mg Remdesiviro skiesti su 250 ml NaCl 0,9%, lašinti į veną per 30-120 min.'
+          ]},
 
         ]},
         {title:'VIRUSINĖ PNEUMONIJA SU HIGH-FLOW DEGUONIES POREIKIU',
