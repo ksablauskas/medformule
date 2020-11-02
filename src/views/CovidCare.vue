@@ -306,7 +306,7 @@ export default {
           {pointText:'Visiems pacientams, neturintiems kitų rizikos faktorių, skiriami antikoaguliantai (įprastai Fraksiparinas), dozė koreguojama pagal svorį (daugmaž taip: iki 70 kg svoris – 0,3x2; daugiau nei 70 kg – 0,6 x 2) ir atsižvelgiant į inkstų funkciją.',
           subpoints:[
           ]},
-          {pointText:'Pacientams, vartojantiems antikoaguliantus, skirti pagal pridedamą lentelę.',
+          {pointText:'Pacientams, vartojantiems antikoaguliantus, skirti pagal <a href="https://www.uptodate.com/contents/image?imageKey=HEME%2F128045&topicKey=ID%2F127454&source=see_link">pridedamą lentelę.</a>',
           subpoints:[
           ]},
           {pointText:'Atsiradus kraujavimui, antikoaguliantai nedelsiant nutraukiami.',
