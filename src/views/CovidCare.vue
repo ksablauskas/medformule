@@ -285,10 +285,16 @@ export default {
           {pointText:'Vartoja Diaprelį -> negalima skirti kartu su insulinoterapija dėl didelės hipoglikemijos rizikos. Esant poreikiui didinti antidiabetinį gydymą, skirti poodinį insuliną ir nutraukti diaprelį.',
           subpoints:[
           ]},
+          {pointText:'Hipoglikemija <4 mmol/l.',
+          subpoints:[
+            'Ekstra koreguoti i/v (50ml/50 % gliukozės) arba p/o gliukoze. Pakartoti gliukozės koncentraciją kraujyje po 15 min. Jei gliukozės koncentracija < 3,9 mmol/l, pakartotinai skirti gliukozę (25-50 ml 50%). Kartojama, kol gliukozės koncentracija >3,9 mmol/l). Nusistovėjus, glikemiją sekti kas 4-6 val./parą.',
+            'Nutraukti antidiabetinį gydymą, jei toks skiriamas.',
+            'Esant gyvybei pavojingai hipoglikemijai, rekomenduojama gliukagonas 1mg injekcija į raumenį.'
+          ]},
           {pointText:'Išrašant, grįžti prie pacientui įprasto gydymo.',
           subpoints:[
           ]},
-          ]},
+        ]},
         {title:'IMUNOSUPRESANTAI',
         points:[
           {pointText:'Aptariama individualiu atveju.',
