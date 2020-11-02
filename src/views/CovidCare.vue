@@ -303,7 +303,10 @@ export default {
         ]},
         {title:'ANTIKOAGULIACIJA',
         points:[
-          {pointText:'Visiems pacientams, neturintiems kitų rizikos faktorių, skiriami antikoaguliantai (įprastai Fraksiparinas), dozė koreguojama pagal svorį (daugmaž taip: iki 70 kg svoris – 0,3x2; daugiau nei 70 kg – 0,6 x 2) ir atsižvelgiant į inkstų funkciją.',
+          {pointText:'Visiems pacientams, neturintiems kontraindikacijų, skiriami antikoaguliantai (įprastai MMMH).',
+          subpoints:[
+          ]},
+          {pointText:'Fraksiparino dozė koreguojama pagal svorį (iki 70 kg– 0,3 ml kas 12 val.; daugiau nei 70 kg – 0,6 ml kas 12 val.) ir atsižvelgiant į inkstų funkciją.',
           subpoints:[
           ]},
           {pointText:'Pacientams, vartojantiems antikoaguliantus, skirti pagal <a href="https://www.uptodate.com/contents/image?imageKey=HEME%2F128045&topicKey=ID%2F127454&source=see_link">pridedamą lentelę.</a>',
