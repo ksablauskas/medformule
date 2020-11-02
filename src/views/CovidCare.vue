@@ -90,6 +90,73 @@
     </v-expansion-panel>
 
     <v-container>
+      <h3>ELEKTROLITŲ KOREKCIJA</h3>
+    </v-container>
+
+    <v-expansion-panel>
+    <v-expansion-panel-content>
+      <template v-slot:header>
+        <h3>HIPOKALEMIJOS KOREKCIJA</h3>
+      </template>
+    <v-container>
+      <v-data-table
+        :headers="hypokalemiaTreatment.headers"
+        :items="hypokalemiaTreatment.regime"
+        class="elevation-1"
+        hide-actions
+      >
+        <template v-slot:items="props">
+          <td class="text-xs-center">
+            <v-card :color='props.item.color'>{{ props.item.name }}</br>
+            {{ props.item.range }}</v-card>
+          </td>
+          <td class="text-xs-left">{{ props.item.k }}</td>
+          <td class="text-xs-left">{{ props.item.os }}</td>
+          <td class="text-xs-left">{{ props.item.iv }}</td>
+          <!-- <td class="text-xs-right">{{ props.item.sp }}</td> -->
+        </template>
+      </v-data-table>
+      </br>
+      <ul>
+      <li v-for="point in hypokalemiaPoints"
+          :key="point">
+          {{point}}
+      </li>
+      </ul>
+    </v-container>
+    </v-expansion-panel-content>
+    <v-expansion-panel-content>
+      <template v-slot:header>
+        <h3>HIPOMAGNEZEMIJOS KOREKCIJA</h3>
+      </template>
+    <v-container>
+      <v-data-table
+        :headers="hypomagnesemiaTreatment.headers"
+        :items="hypomagnesemiaTreatment.regime"
+        class="elevation-1"
+        hide-actions
+      >
+        <template v-slot:items="props">
+          <td class="text-xs-center">
+            <v-card :color='props.item.color'>{{ props.item.name }}</br>
+            {{ props.item.range }}</v-card>
+          </td>
+          <td class="text-xs-left">{{ props.item.mg }}</td>
+          <td class="text-xs-left">{{ props.item.iv }}</td>
+        </template>
+      </v-data-table>
+      </br>
+      <ul>
+      <li v-for="point in hypomagnesemiaPoints"
+          :key="point">
+          {{point}}
+      </li>
+      </ul>
+    </v-container>
+    </v-expansion-panel-content>
+    </v-expansion-panel>
+
+    <v-container>
       <h3>SPECIFINIS GYDYMAS</h3>
     </v-container>
 
@@ -260,7 +327,7 @@ export default {
           {pointText:'Vyresniems pacientams SpO2<92-93%.',
           subpoints:[
           ]},
-          {pointText:'Svarbu titruoti dozę pagal efektą: O2 ir pakilus SpO2 >97% – O2 galima mažinti.',
+          {pointText:'Svarbu titruoti dozę pagal efektą: kai skiriant O2 pakyla SpO2 >97% – O2 galima mažinti.',
           subpoints:[
           ]},
           {pointText:'Titruojant pagal arterines kraujo dujas, palaikyti PaO2>60mmHg.',
@@ -328,6 +395,86 @@ export default {
           ]},
         ]},
       ],
+      hypokalemiaTreatment: {
+        headers: [
+            {
+              text: 'Hipokalemija',
+              align: 'left',
+              sortable: false,
+              value: 'name'
+            },
+            { text: 'K poreikis*', value: 'k'},
+            { text: 'P/OS', value: 'os' },
+            { text: 'Į/V**', value: 'iv' },
+            // { text: 'Spironolaktonas', value: 'sp' },
+          ],
+          regime: [
+            {
+              name: 'Lengva',
+              range: '3,4-3,9 mmol/l',
+              k: '1-6 g',
+              os: '1 Tab. KCl 750 mg x 2-3k/d.',
+              iv: 'Sol. KCl 10 % 10ml (1g) x 1-3 k/d.',
+              color: 'green lighten-1',
+              // sp: 'Pradėti nuo 50-100 mg per dieną, galima palaipsniui didinti iki 400 mg per dieną',
+            },
+            {
+              name: 'Vidutinė',
+              range: '3-3,3 mmol/l',
+              k: '7-10 g',
+              os: '1-2 Tab. KCl 750 mg x 3k/d.',
+              iv: 'Sol. KCl 10 % 10-30 ml į/v x 3 k/d.',
+              color: 'orange lighten-1',
+            },
+            {
+              name: 'Sunki',
+              range: '<3 mmol/l',
+              k: '>10 g',
+              os: 'Tab. KCl 750 mg x 2 ne dažniau nei kas 3 val.***',
+              iv: 'Sol. KCl 10 % 30-40 ml x 3 k/d.',
+              color: 'red lighten-1',
+            },
+          ],
+        },
+        hypomagnesemiaTreatment: {
+        headers: [
+            {
+              text: 'Hipomagnezemija',
+              align: 'left',
+              sortable: false,
+              value: 'name'
+            },
+            { text: 'Mg poreikis*', value: 'mg'},
+            { text: 'Į/V**', value: 'iv' },
+          ],
+          regime: [
+            {
+              name: 'Lengva-vidutinė',
+              range: '0,41-0,70 mmol/l',
+              mg: '1-4 g',
+              iv: 'Sol. MgSO4 25 % 5-10 ml į/v x 1-2 k/d.',
+              color: 'orange lighten-1',
+            },
+            {
+              name: 'Sunki',
+              range: '<0,41 mmol/l',
+              mg: '4-8 g',
+              iv: 'Sol. MgSO4 25 % 10 ml x 2-3 k/d.',
+              color: 'red lighten-1',
+            },
+          ],
+        },
+        hypokalemiaPoints: [
+          '* K poreikis per dieną. 1g pakelia K koncentraciją kraujyje 0,1 mmol/l, pagal tai galima preliminariai apskaičiuoti reikalingo kalio kiekį.',
+          '** Sol. KCl 10 % 10 ml (1 g) praskiesti su  Sol. NaCl 0,9 % 500 ml ir lėtai infuzuoti į/v.',
+          '*** vienu kartu nerekomenduojama skirti 3 ar daugiau KCl tablečių dėl virškinimo trakto dirginimo.',
+          'Esant visų sukumų hipokalemijai galima skirti spironolaktoną: pradėti nuo 50-100 mg per dieną, galima palaipsniui didinti iki 400 mg per dieną.',
+          'Lašinimo greitis į periferinę veną ≤ 1 g KCl/val. Jei reikalingas >1 g KCL/val. greitis – indikuotina CVK. Maksimalus greitis į CVK 3 g KCl/val. praskiedus su NaCl 0,9 % 50 -100ml., TIK su pastoviu EKG monitoravimu. Esant vidutinio laipsnio ir sunkiai hipokalemijai sekti K koncentraciją 3-4 x d. Infuzuojamų skysčių kiekis pacientams su kardiovaskulinėmis, inkstų patologijomis turi būti griežtai monitoruojamas, vengiant hipervolemijos.',
+        ],
+        hypomagnesemiaPoints: [
+          '* Mg poreikis per dieną. Sol. MgSO4 25% 10 ml = 2,5 g magnio.',
+          '** MgSO4 25% 10 ml skiesti su 250 - 500 ml NaCl 0.9 % arba gliukozės 5% tirpalais ir lašinti ne greičiau nei per 1 - 2 val. bei stebėti paciento AKS, EKG ir Mg koncentraciją kraujo plazmoje (norma: 0,8 – 1,2 mmol/l) bei diurezę. Infuzuojamų skysčių kiekis pacientams su kardiovaskulinėmis, inkstų patologijomis turi būti griežtai monitoruojamas, vengiant hipervolemijos.',
+        ],
     }
   }
 }
