@@ -267,7 +267,8 @@ export default {
           {pointText:'AKFi, ARB turi būti tęsiami, jei nėra priežasčių juos nutraukti:',
           subpoints:[
             'Hipotenzija',
-            'Ūminis inkstų pažeidimas'
+            'Ūminis inkstų pažeidimas',
+            'Hiperkalemija'
           ]},
           {pointText:'Naujai atsiradusiai hipertenzijai koreguoti patartina skirti AKFi. Yra įrodymų, kad AKFi ir ARB gali gerinti ligos išeitis, bet įrodymų trūksta.',
           subpoints:[
@@ -368,16 +369,26 @@ export default {
         ]},
         {title:'VIRUSINĖ PNEUMONIJA BE DEGUONIES POREIKIO AR LOW-FLOW POREIKIS',
         points:[
-          {pointText:'Skiriamas Remdesiviras, dėl paskyrimo sprendžia konsiliumas.',
+          {pointText:'Skiriamas Deksametazonas',
           subpoints:[
           ]},
-          {pointText:'Remdesiviro schema (1 kartą per dieną):',
+          {pointText:'Deksametazono schema (1 kartą per dieną):',
           subpoints:[
-            '1 diena: 200 mg Remdesiviro skiesti su 250 ml NaCl 0,9%; lašinti į veną per 30-120 min.',
-            '2-5 dienos: 100 mg Remdesiviro skiesti su 250 ml NaCl 0,9%, lašinti į veną per 30-120 min.'
+            '6 mg Deksametazono per os ar į veną (galima skirti bolus ar lašinti su nedideliu kiekiu NaCl 0,9%) 1 kartą per dieną 10 dienų iš eilės.'
           ]},
+          {pointText:'Deksametazono skyrimo metu atkreipti dėmesį į:',
+          subpoints:[
+            'Glikemiją (ypač CD sergantiems pacientams) - gliukozės monitoravimas 3 k/d.',
+            'AKS (ypač hipertenzija sergantiems pacientams).',
+            'Sujaudinimą (skirti pirmoje dienos pusėje).',
+            'VT dirginimą (papildomai skirti Omeprazolį profilaktikai)'
+          ]},
+          {pointText:'Svarstyti dėl Remdesiviro skyrimo. Aptarti konsiliume.',
+          subpoints:[
+          ]},
+
         ]},
-        {title:'VIRUSINĖ PNEUMONIJA SU DEGUONIES POREIKIU',
+        {title:'VIRUSINĖ PNEUMONIJA SU HIGH-FLOW DEGUONIES POREIKIU',
         points:[
           {pointText:'Skiriamas Deksametazonas. Įrodyta, jog 10 dienų mažų dozių Deksametazono kursas gerina ligos išeitis.',
           subpoints:[
