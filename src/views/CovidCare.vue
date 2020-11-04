@@ -361,13 +361,13 @@ export default {
         ]},
       ],
       specificTreatment: [
-        {title:'LENGVA FORMA BE PNEUMONIJOS IR BE DEGUONIES POREIKIO',
+        {title:'sO2 > 94% KVĖPUOJANT APLINKOS ORU',
         points:[
           {pointText:'Simptominis gydymas',
           subpoints:[
           ]},
         ]},
-        {title:'VIRUSINĖ PNEUMONIJA BE DEGUONIES POREIKIO AR LOW-FLOW POREIKIS',
+        {title:'sO2 ≤ 94% IR LOW-FLOW (NOSIES KANIULĖS / KAUKĖ)',
         points:[
           {pointText:'Skiriamas Deksametazonas',
           subpoints:[
@@ -393,7 +393,7 @@ export default {
           ]},
 
         ]},
-        {title:'VIRUSINĖ PNEUMONIJA SU HIGH-FLOW DEGUONIES POREIKIU',
+        {title:'sO2 ≤ 94% HIGH-FLOW / DPV**',
         points:[
           {pointText:'Skiriamas Deksametazonas. Įrodyta, jog 10 dienų mažų dozių Deksametazono kursas gerina ligos išeitis.',
           subpoints:[
@@ -408,6 +408,9 @@ export default {
             'AKS (ypač hipertenzija sergantiems pacientams).',
             'Sujaudinimą (skirti pirmoje dienos pusėje).',
             'VT dirginimą (papildomai skirti Omeprazolį profilaktikai)'
+          ]},
+          {pointText:'**Kai COVID-19 simptomų trukmė yra <5-7 dienos ir hospitalizavus iškart yra high-flow / DPV indikacijos, spręsti dėl remdesiviro skyrimo individualiai; ieškoti kitų / papildomų kvėpavimo nepakankamumo priežasčių.',
+          subpoints:[
           ]},
         ]},
         {title:'IMUNOSUPRESUOTI PACIENTAI',
