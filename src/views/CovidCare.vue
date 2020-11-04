@@ -157,7 +157,8 @@
     </v-expansion-panel>
 
     <v-container>
-      <h3>SPECIFINIS GYDYMAS</h3>
+      <h3>SPECIFINIS GYDYMAS*</h3>
+      <p>*Spręsti dėl dalyvavimo klinikiniame tyrime</p>
     </v-container>
 
     <v-expansion-panel>
@@ -363,7 +364,7 @@ export default {
       specificTreatment: [
         {title:'sO2 > 94% KVĖPUOJANT APLINKOS ORU',
         points:[
-          {pointText:'Simptominis gydymas',
+          {pointText:'Simptominis gydymas / stebėsena',
           subpoints:[
           ]},
         ]},
