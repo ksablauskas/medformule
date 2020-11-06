@@ -159,9 +159,18 @@
     <v-container>
       <h3>SPECIFINIS GYDYMAS*</h3>
       <p>*Spręsti dėl dalyvavimo klinikiniame tyrime</p>
+      
     </v-container>
 
     <v-expansion-panel>
+      <v-expansion-panel-content>
+        <template v-slot:header>
+          <h3>BENDRA SCHEMA</h3>
+        </template>
+        <v-container>
+          <img style="width: 100%" src="@/assets/specific_treatment_covid.png"></img>
+        </v-container>
+      </v-expansion-panel-content>
     <v-expansion-panel-content
       v-for="item in specificTreatment"
       :key="item.title"
@@ -259,7 +268,7 @@ export default {
           subpoints:[
             'Nauja karščiavimo banga ir nauja konsolidacijos zona plaučių rentgene;',
             'Plaučių KT bakterinei pneumonijai būdingi požymiai;',
-            'Reikšmingas CRB, PCT didėjimas;',
+            ' Reikšmingas CRB, PCT didėjimas (atkreipti dėmesį, kad vėlyvose ligos stadijose PCT nepadeda patikimai diferencijuoti virusinės ir bakterinės pneumonijos);',
             'Pacientai, turintys rijimo sutrikimų, kai įtariama aspiracija;',
             'Kraujo ir šlapimo bei skreplių pasėliai prieš skiriant pirmąją antibiotikų dozę.'
             ]},]},
@@ -271,7 +280,7 @@ export default {
             'Ūminis inkstų pažeidimas',
             'Hiperkalemija'
           ]},
-          {pointText:'Naujai atsiradusiai hipertenzijai koreguoti patartina skirti AKFi. Yra įrodymų, kad AKFi ir ARB gali gerinti ligos išeitis, bet įrodymų trūksta.',
+          {pointText:'Naujai atsiradusiai hipertenzijai koreguoti patartina skirti AKFi. Yra duomenų, kad AKFi ir ARB gali gerinti ligos išeitis, bet įrodymų trūksta.',
           subpoints:[
             ]},]},
         {title:'STATINAI',
