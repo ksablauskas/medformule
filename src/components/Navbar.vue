@@ -3,13 +3,15 @@
     <v-toolbar app class="blue darken-2">
       <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
         <h1 class="subheading">MENU</h1> -->
-      <v-spacer></v-spacer>
+      
 
       <router-link to="/about" tag="v-btn">
         <v-btn flat name="about">
           <span>Autoriai</span>
         </v-btn>
       </router-link >
+
+      <v-spacer></v-spacer>
 
       <router-link to="/" tag="v-btn">
         <v-btn flat name="pradzia">
