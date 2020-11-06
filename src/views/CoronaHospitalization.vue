@@ -89,11 +89,6 @@ export default {
           ]},
           {pointText:'COVID-19 koordinatoriaus sprendimu, jei yra kitų blogos prognozės priežasčių (pvz., „citokinų audros“ požymiai)',
           subpoints:[
-            'Nauja karščiavimo banga ir nauja konsolidacijos zona plaučių rentgene;',
-            'Plaučių KT bakterinei pneumonijai būdingi požymiai;',
-            'Reikšmingas CRB, PCT didėjimas;',
-            'Pacientai, turintys rijimo sutrikimų, kai įtariama aspiracija;',
-            'Kraujo ir šlapimo bei skreplių pasėliai prieš skiriant pirmąją antibiotikų dozę.'
             ]},]},
         {title:'III LYGIO LIGONINĖJE',
         points:[
