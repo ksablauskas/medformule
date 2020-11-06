@@ -33,7 +33,7 @@ export default {
     return {
       title: 'Skaičiuoklės medikams',
       calculators: [
-        {id:0, title: 'COVID-19 hospitalizacijos kriterijai', color: 'red lighten-1', link: '/hospitalization'},
+        {id:0, title: 'COVID-19 hospitalizacijos / išrašymo kriterijai', color: 'red lighten-1', link: '/hospitalization'},
         {id:1, title: 'COVID-19 bendra gydymo taktika', color: 'blue darken-2', link: '/covid'},
         {id:2, title: 'NEWS', color: 'orange', link: '/news'},
         {id:3, title: 'GFG ir kreatinino klirensas (suaugusiųjų)', color: 'green', link: '/ckd'},
