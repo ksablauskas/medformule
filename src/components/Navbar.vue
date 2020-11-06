@@ -5,11 +5,11 @@
         <h1 class="subheading">MENU</h1> -->
       <v-spacer></v-spacer>
 
-      <!-- <router-link to="/suggestions" tag="v-btn">
-        <v-btn flat name="suggestions">
-          <span>Pasiūlymai</span>
+      <router-link to="/about" tag="v-btn">
+        <v-btn flat name="about">
+          <span>Autoriai</span>
         </v-btn>
-      </router-link > -->
+      </router-link >
 
       <router-link to="/" tag="v-btn">
         <v-btn flat name="pradzia">

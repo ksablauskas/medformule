@@ -6,10 +6,24 @@
     <br>
     <v-card>
       <v-container>
-        <p>Šią programėlę sukūrėme reaguodami į COVID-19 pandemijos fronte dirbančių medikų poreikį turėti aiškias ir praktikoje pritaikomas gaires.
-          Programėle yra sukurta <a href="https://www.covidmed.lt/">Įrodymais pagrįstos medicinos grupės</a> iniciatyva.
+        <p>Programėle yra sukurta <a href="https://www.covidmed.lt/">Įrodymais pagrįstos medicinos grupės</a> iniciatyva.
         </p>
-        <ul></ul>
+        <p>Programėlės autoriai:
+            <ul>
+              <li>Gyd. Karolis Šablauskas</li>
+              <li>Gyd. Ugnė Ringelevičiūtė</li>
+            </ul>
+          </p>
+          <p>Dėkojame už pagalbą:
+            <ul>
+              <li>Prof. Laimonui Griškevičiui</li>
+              <li>Prof. Ligitai Jenčorienei</li>
+              <li>Gyd. Tumui Beinortui</li>
+              <li>Dr. Donatai Ringaitienei</li>
+              <li>Dr. Valdui Pečeliūnui</li>
+              <li>Gyd. Tomui Kairiui</li>
+            </ul>
+          </p>
       </v-container>
     </v-card>
   </v-container>
@@ -23,7 +37,7 @@ export default {
   },
   data() {
     return {
-      title: 'Apie',
+      title: 'Autoriai',
     }
   }
 }
