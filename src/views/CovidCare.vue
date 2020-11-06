@@ -157,8 +157,8 @@
     </v-expansion-panel>
 
     <v-container>
-      <h3>SPECIFINIS GYDYMAS*</h3>
-      <p>*Spręsti dėl dalyvavimo klinikiniame tyrime</p>
+      <h3>SPECIFINIS GYDYMAS</h3>
+      <p>Spręsti dėl dalyvavimo klinikiniame tyrime</p>
       
     </v-container>
 
@@ -169,6 +169,7 @@
         </template>
         <v-container>
           <img style="width: 100%" src="@/assets/specific_treatment_covid.png"></img>
+          <p>*Kai COVID-19 simptomų trukmė yra <5-7 dienos ir hospitalizavus iškart yra high-flow / DPV indikacijos, spręsti dėl remdesiviro skyrimo individualiai; ieškoti kitų / papildomų kvėpavimo nepakankamumo priežasčių.</p>
         </v-container>
       </v-expansion-panel-content>
     <v-expansion-panel-content
@@ -210,30 +211,29 @@ export default {
       title: 'COVID-19 gydymo taktika',
       testTable:[
         {
-          title:'KASDIEN',
+          title:'ATVYKUS',
           tests:[
             'BKT',
             'Na, K, Cl, Mg',
+            'Kreatininas, bilirubinas, AST, ALT',
             'Laktatas',
             'CRB',
-            'Feritinas'
-          ]
-        },
-        {
-          title:'KAS 2-3 DIENAS',
-          tests:[
-            'SPA, ADTL, fibrinogenas',
-            'D-dimerai'
+            'Feritinas',
+            'LDH',
+            'SPA, ADTL, fibrinogenas, d-dimerai',
+            'Gripo virusas (pageidautina kartu su SARS-CoV-2)',
           ]
         },
         {
           title:'PAGAL INDIKACIJAS',
           tests:[
-            'HBV, HCV, HIV žymenys, jei anksčiau nedaryta',
-            'Troponinas tik esant skausmams',
-            'LDH, jei buvo padidėjęs',
-            'Prokalcitoninas – įtariant bakterinę superinfekciją. Nepatikimas pažengus ligai',
-            'Gripo virusas – visiems atvykusiems'
+            'Prokalcitoninas (PCT) – ankstyvoje ligos fazėje diferencijuojant virusinės ir bakterinės kilmės pneumoniją ar įtariant hospitalinę pneumoniją. Vėlyvoje fazėje diferenciacija nepatikima.'
+          ]
+        },
+        {
+          title:'TYRIMŲ KARTOJIMAS',
+          tests:[
+            'Tyrimus kartoti pagal klinikines indikacijas.'
           ]
         },
       ],
