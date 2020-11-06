@@ -1,7 +1,7 @@
 <template>
     <v-flex xs12 md3 px-1>
         <router-link :to="link" tag="v-btn">
-            <v-btn class="selection-button" :color="color" block>
+            <v-btn flat class="selection-button" :color="color" block>
                 <span style="white-space: normal;" class="title font-weight-regular">{{title}}</span>
             </v-btn>
         </router-link>

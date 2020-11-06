@@ -5,9 +5,9 @@
         <h1 class="subheading">MENU</h1> -->
       <v-spacer></v-spacer>
 
-      <!-- <router-link to="/about" tag="v-btn">
-        <v-btn flat name="apie">
-          <span>Apie</span>
+      <!-- <router-link to="/suggestions" tag="v-btn">
+        <v-btn flat name="suggestions">
+          <span>Pasiūlymai</span>
         </v-btn>
       </router-link > -->
 

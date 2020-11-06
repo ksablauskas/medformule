@@ -11,6 +11,7 @@ import CoronaHospitalization from './views/CoronaHospitalization.vue'
 import CoronaSociety from './views/CoronaSociety.vue'
 import CoronaOutpatient from './views/CoronaOutpatient.vue'
 import About from './views/About.vue'
+import Suggestions from './views/Suggestions.vue'
 
 Vue.use(Router)
 
@@ -72,6 +73,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: About
-    }        
+    },
+    {
+      path: '/suggestions',
+      name: 'suggestions',
+      component: Suggestions
+    }         
   ]
 })
