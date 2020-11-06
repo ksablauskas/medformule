@@ -99,7 +99,7 @@ export default {
             '<b>DODS</b>: naujai atsiradęs daugiau nei vienos organų sistemų funkcijos sutrikimas.',
             '<b>NEWS</b> (angl. <i>National Early Warning Score</i>) ≥ 7 balai.'
           ]},
-          {pointText:'Getutinės ligos, nesant kritinės būklės.',
+          {pointText:'Gretutinės ligos, nesant kritinės būklės.',
           subpoints:[
             '<b>Transplantuoti</b>.',
             '<b>Imunosupresuoti</b> dėl ligos ar gaunantys imunosupresinį gydymą.',
