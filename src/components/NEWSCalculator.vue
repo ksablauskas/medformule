@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <p><b>SVARBU:</b> NEWS rodiklis turi būti vertinamas periodiškai.</p>
     <v-container>
       <v-data-table
         :headers="newsTable.headers"
