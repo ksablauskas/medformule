@@ -64,12 +64,49 @@
     </v-expansion-panel>
 
     <v-container>
+      <h3>SPECIFINIS GYDYMAS</h3>
+      <p>Spręsti dėl dalyvavimo klinikiniame tyrime</p>
+      
+    </v-container>
+
+    <v-expansion-panel>
+      <v-expansion-panel-content>
+        <template v-slot:header>
+          <h3>BENDRA SCHEMA</h3>
+        </template>
+        <v-container>
+          <img style="width: 100%" src="@/assets/specific_treatment_covid.png"></img>
+          <p>*Kai COVID-19 simptomų trukmė yra <5-7 dienos ir hospitalizavus iškart yra high-flow / DPV indikacijos, spręsti dėl remdesiviro skyrimo individualiai; ieškoti kitų / papildomų kvėpavimo nepakankamumo priežasčių.</p>
+        </v-container>
+      </v-expansion-panel-content>
+    <v-expansion-panel-content
+      v-for="item in specificTreatment"
+      :key="item.title"
+    >
+      <template v-slot:header>
+        <h3>{{item.title}}</h3>
+      </template>
+      <v-container>
+        <ul>
+        <li v-for="point in item.points"
+            :key="point.pointText">
+            <span v-html='point.pointText'></span>
+            <ul  v-if="point.subpoints.length > 0">
+              <li v-for="subpoint in point.subpoints"><v-html>{{subpoint}}</v-html></li>
+            </ul>
+        </li>
+        </ul>
+      </v-container>
+    </v-expansion-panel-content>
+    </v-expansion-panel>
+
+    <v-container>
       <h3>PALAIKOMASIS GYDYMAS</h3>
     </v-container>
 
     <v-expansion-panel>
     <v-expansion-panel-content
-      v-for="item in treatment"
+      v-for="item in supportiveTreatment"
       :key="item.title"
     >
       <template v-slot:header>
@@ -156,42 +193,7 @@
     </v-expansion-panel-content>
     </v-expansion-panel>
 
-    <v-container>
-      <h3>SPECIFINIS GYDYMAS</h3>
-      <p>Spręsti dėl dalyvavimo klinikiniame tyrime</p>
-      
-    </v-container>
-
-    <v-expansion-panel>
-      <v-expansion-panel-content>
-        <template v-slot:header>
-          <h3>BENDRA SCHEMA</h3>
-        </template>
-        <v-container>
-          <img style="width: 100%" src="@/assets/specific_treatment_covid.png"></img>
-          <p>*Kai COVID-19 simptomų trukmė yra <5-7 dienos ir hospitalizavus iškart yra high-flow / DPV indikacijos, spręsti dėl remdesiviro skyrimo individualiai; ieškoti kitų / papildomų kvėpavimo nepakankamumo priežasčių.</p>
-        </v-container>
-      </v-expansion-panel-content>
-    <v-expansion-panel-content
-      v-for="item in specificTreatment"
-      :key="item.title"
-    >
-      <template v-slot:header>
-        <h3>{{item.title}}</h3>
-      </template>
-      <v-container>
-        <ul>
-        <li v-for="point in item.points"
-            :key="point.pointText">
-            <span v-html='point.pointText'></span>
-            <ul  v-if="point.subpoints.length > 0">
-              <li v-for="subpoint in point.subpoints"><v-html>{{subpoint}}</v-html></li>
-            </ul>
-        </li>
-        </ul>
-      </v-container>
-    </v-expansion-panel-content>
-    </v-expansion-panel>
+    
 
 
   </v-container>
@@ -227,7 +229,7 @@ export default {
         {
           title:'PAGAL INDIKACIJAS',
           tests:[
-            'Prokalcitoninas (PCT) – ankstyvoje ligos fazėje diferencijuojant virusinės ir bakterinės kilmės pneumoniją ar įtariant hospitalinę pneumoniją. Vėlyvoje fazėje diferenciacija nepatikima.'
+            'Prokalcitoninas (PCT) – ankstyvoje ligos fazėje diferencijuojant virusinės ir bakterinės kilmės pneumoniją ar įtariant hospitalinę pneumoniją.'
           ]
         },
         {
@@ -248,7 +250,8 @@ export default {
         {
           title:'Plaučių KT',
           tests:[
-            'Blogėjant būklei/didėjant deguonies poreikiui, kai plaučių rentgenograma neblogėjanti.'
+            'Įtariant virusinę pneumoniją, kai plaučių Ro infiltracijos nestebima.',
+            'Difereninei diagnostikai (pvz., PATE).'
           ]
         },
         {
@@ -259,7 +262,25 @@ export default {
           ]
         },
       ],
-      treatment: [
+      oxygenTreatment: [
+        
+      ],
+      supportiveTreatment: [
+        {title:'ANTIKOAGULIACIJA',
+        points:[
+          {pointText:'Visiems pacientams, neturintiems kontraindikacijų, skiriami antikoaguliantai (įprastai MMMH).',
+          subpoints:[
+          ]},
+          {pointText:'Detalios nadroparino skyrimo <a href="http://www.hotg.lt/nadroparin/">gairės</a>. Nadroparino dozė koreguojama pagal svorį (iki 70 kg– 0,3 ml kas 12 val.; daugiau nei 70 kg – 0,6 ml kas 12 val.) ir atsižvelgiant į inkstų funkciją.',
+          subpoints:[
+          ]},
+          {pointText:'Pacientams, vartojantiems antikoaguliantus, skirti pagal <a href="https://www.uptodate.com/contents/image?imageKey=HEME%2F128045&topicKey=ID%2F127454&source=see_link">pridedamą lentelę.</a>',
+          subpoints:[
+          ]},
+          {pointText:'Atsiradus kraujavimui, antikoaguliantai nedelsiant nutraukiami.',
+          subpoints:[
+          ]},
+        ]},
         {title:'EMPIRINIS ANTIBAKTERINIS GYDYMAS',
         points:[
           {pointText:'Sergant COVID-19 nelabai būdingos bakterinės superinfekcijos',
@@ -318,42 +339,9 @@ export default {
           subpoints:[
           ]},
         ]},
-        {title:'ANTIKOAGULIACIJA',
-        points:[
-          {pointText:'Visiems pacientams, neturintiems kontraindikacijų, skiriami antikoaguliantai (įprastai MMMH).',
-          subpoints:[
-          ]},
-          {pointText:'Fraksiparino dozė koreguojama pagal svorį (iki 70 kg– 0,3 ml kas 12 val.; daugiau nei 70 kg – 0,6 ml kas 12 val.) ir atsižvelgiant į inkstų funkciją.',
-          subpoints:[
-          ]},
-          {pointText:'Pacientams, vartojantiems antikoaguliantus, skirti pagal <a href="https://www.uptodate.com/contents/image?imageKey=HEME%2F128045&topicKey=ID%2F127454&source=see_link">pridedamą lentelę.</a>',
-          subpoints:[
-          ]},
-          {pointText:'Atsiradus kraujavimui, antikoaguliantai nedelsiant nutraukiami.',
-          subpoints:[
-          ]},
-        ]},
         {title:'ANTIPIRETIKAI',
         points:[
           {pointText:'Paracetamolis – mažiausia efektyvi dozė.',
-          subpoints:[
-          ]},
-        ]},
-        {title:'DEGUONIES TERAPIJA',
-        points:[
-          {pointText:'Jauniems pacientams SpO2 <95%.',
-          subpoints:[
-          ]},
-          {pointText:'Vyresniems pacientams SpO2<92-93%.',
-          subpoints:[
-          ]},
-          {pointText:'Svarbu titruoti dozę pagal efektą: kai skiriant O2 pakyla SpO2 >97% – O2 galima mažinti.',
-          subpoints:[
-          ]},
-          {pointText:'Titruojant pagal arterines kraujo dujas, palaikyti PaO2>60mmHg.',
-          subpoints:[
-          ]},
-          {pointText:'Atsargiai skirti O2 terapiją sergantiems lėtine obstrukcine plaučių liga dėl hiperkapnijos pavojaus (šiems pacientams monitoruoti arterines kraujo dujas).',
           subpoints:[
           ]},
         ]},
@@ -371,6 +359,21 @@ export default {
         ]},
       ],
       specificTreatment: [
+        {title:'DEGUONIES TERAPIJA',
+        points:[
+          {pointText:'Indikacija: SpO2≤94%, kvėpuojant aplinkos oru.',
+          subpoints:[
+          ]},
+          {pointText:'Svarbu titruoti dozę pagal efektą: kai skiriant O2 pakyla SpO2 >97% – O2 galima mažinti.',
+          subpoints:[
+          ]},
+          {pointText:'Titruojant pagal arterines kraujo dujas, palaikyti PaO2>60mmHg.',
+          subpoints:[
+          ]},
+          {pointText:'Atsargiai skirti O2 terapiją sergantiems lėtine obstrukcine plaučių liga dėl hiperkapnijos pavojaus (šiems pacientams monitoruoti arterines kraujo dujas).',
+          subpoints:[
+          ]},
+        ]},
         {title:'sO2 > 94% KVĖPUOJANT APLINKOS ORU',
         points:[
           {pointText:'Simptominis gydymas / stebėsena',

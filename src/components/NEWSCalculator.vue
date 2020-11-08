@@ -1,5 +1,31 @@
 <template>
   <v-container>
+    <v-container>
+      <v-data-table
+        :headers="newsTable.headers"
+        :items="newsTable.regime"
+        class="elevation-1"
+        hide-actions
+      >
+        <template v-slot:items="props">
+          <td class="text-xs-center">
+            <v-card :color='props.item.color'>{{ props.item.name }}</br>
+            {{ props.item.range }}</v-card>
+          </td>
+          <td class="text-xs-left">{{ props.item.monitor }}</td>
+          <td class="text-xs-left">
+            <ul>
+              <li v-for="action in props.item.actions">{{action}}</li>
+            </ul>
+          </td>
+        </template>
+      </v-data-table>
+      </br>
+
+    </v-container>
+
+
+
     <FieldTitle :title="'Kvėpavimo dažnis'"></FieldTitle>
     <ButtonSelector :options="respiratoryRateArray"></ButtonSelector>
 
@@ -33,15 +59,6 @@
     <ul>
       <li v-for="comment in NEWSComments">{{comment}}</li>
     </ul>
-
-    <!-- <Result
-      :resultvalue="cochroftGault"
-      :resultcolor="cochroftGaultColor"
-      :resultitle="'COCKCROFT-GAULT (CrCl)'"
-      :resultmeaning="cochroftGaultStage"
-      :units="'mL/min'"
-    >
-    </Result> -->
 
     <v-container>
       <Reference v-for="reference in references"
@@ -131,6 +148,18 @@ export default {
           // {id: 3, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
           // {id: 4, text: "Formulės galioja tik su standartizuotais serumo kreatinino nustatymo metodais."},
         ],
+        newsActions: {
+          grey: ['Tęsti NEWS vertinimą'],
+          green: ['Apie paciento būklę informuojama slaugytoja, kuri įvertina apie monitoravimo dažnio poreikį'],
+          orange: [
+            'Slaugytoja įspėja komandą apie paciento būklę',
+            'Pacientą turi įvertinti gydytojas, kuris turi patirties prižiūrint sunkios būklės pacientus',
+            'Priežiūra tęsiama palatoje, kurioje galimas nuolatinis monitoravimas'],
+          red: [
+            'Slaugytoja nedelsiant įspėja komandą apie paciento būklę',
+            'Pacientą turi įvertinti gydytojas, kuris turi patirties prižiūrint sunkios būklės pacientus ir moka esant reikalui pacientą intubuoti',
+            'Komanda sprendžia dėl gydymo tęsimo RITS'],
+        },        
     }
   },
   methods: {
@@ -139,7 +168,7 @@ export default {
   //   },
     getStageName: function(score, singleAbnormal) {
       if (score === ''){return 'Užpildykite visus laukelius'}
-      else if(score == 0){return 'Monitoravimas kas 12 val'}
+      else if(score == 0){return 'Tęsti NEWS vertinimą'}
       else if((score >= 1 && score < 7) && singleAbnormal){return 'Monitoravimas kas 1 val (bent vieno rodiklio vertė yra 3)'}
       else if(score >= 1 && score < 5){return 'Monitoravimas kas 4-6 val'}
       else if(score >= 5 && score < 7){return 'Monitoravimas kas 1 val'}
@@ -147,19 +176,11 @@ export default {
     },
     getStageComments: function(score, singleAbnormal){
       if (score === ''){return []}
-      else if(score == 0){return ['Vertinti NEWS kiekvieno stebėjimo metu.']}
-      else if((score >= 1 && score < 7) && singleAbnormal){return [
-        'Skubiai informuoti gydytoją (bent vieno rodiklio vertė yra 3)',
-        'Gydytojas įvertina būklę skubos tvarka']}
-      else if(score >= 1 && score < 5){return ['Svarstyti dėl dažnesnio monitoravimo ir gydymo taktikos intensyvinimo.']}
-      else if(score >= 5 && score < 7){return [
-        'Skubiai informuoti gydytoją',
-        'Gydytojas įvertina būklę skubos tvarka']}
-      else if(score >= 7){return [
-        'Nedelsiant informuoti gydytoją',
-        'Gydytojas įvertina būklę skubos tvarka',
-        'Skubi RITS konsultacija',
-      ]}
+      else if(score == 0){return this.newsActions.grey}
+      else if((score >= 1 && score < 7) && singleAbnormal){return this.newsActions.orange}
+      else if(score >= 1 && score < 5){return this.newsActions.green}
+      else if(score >= 5 && score < 7){return this.newsActions.orange}
+      else if(score >= 7){return this.newsActions.red}
     },
     getStageColor: function(score, singleAbnormal) {
       if (score === ''){return 'grey'}
@@ -171,17 +192,45 @@ export default {
     }
   },
   computed: {
-  //   inputControl: function() {
-  //     let age = this.age.value
-  //     let creatinine = this.serumCreatinine.value
-
-  //     let messages = []
-
-  //     if (age < 18){messages.push(this.errorMessages.invalidAge)}
-  //     if (creatinine <= 0){messages.push(this.errorMessages.invalidCreatinine)}
-      
-  //     return messages
-  //   },
+    newsTable: function(){ return {
+          headers: [
+              {
+                text: 'NEWS',
+                align: 'left',
+                sortable: false,
+                value: 'name'
+              },
+              { text: 'MONITORAVIMO DAŽNIS', value: 'monitor'},
+              { text: 'PERSONALO VEIKSMAI', value: 'actions' },
+            ],
+          regime: [
+            {
+              name: 'Viso 0',
+              monitor: 'Kas 12 val.',
+              actions: this.newsActions.grey,
+              color: 'grey',
+            },
+            {
+              name: 'Viso 1-4',
+              monitor: 'Kas 4-6 val.',
+              actions: this.newsActions.green,
+              color: 'green lighten-2',
+            },
+            {
+              name: 'Viso 5-6 arba 3 viename parametre',
+              monitor: 'Kas valandą',
+              actions: this.newsActions.orange,
+              color: 'orange lighten-2',
+            },
+            {
+              name: 'Viso >=7',
+              monitor: 'Nuolatinis gyvybinių rodiklių monitoravimas',
+              actions: this.newsActions.red,
+              color: 'red lighten-2',
+            },
+          ],
+      }
+    },
     NEWSSingleAbnormal: function(){
       let respiratoryRate = this.respiratoryRateArray.find(obj => {
         return obj.active === true
