@@ -17,7 +17,7 @@
           <p>Dėkojame už pagalbą:
             <ul>
               <li>Prof. Laimonui Griškevičiui</li>
-              <li>Prof. Ligitai Jenčorienei</li>
+              <li>Prof. Ligitai Jančorienei</li>
               <li>Gyd. Tumui Beinortui</li>
               <li>Dr. Donatai Ringaitienei</li>
               <li>Dr. Valdui Pečeliūnui</li>
