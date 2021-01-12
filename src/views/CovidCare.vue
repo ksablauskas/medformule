@@ -251,6 +251,7 @@ export default {
           title:'Plaučių KT',
           tests:[
             'Įtariant virusinę pneumoniją, kai plaučių Ro infiltracijos nestebima.',
+            'Diferencijuojant tarp COVID-19 pneumonijos progresijos ir antrinės bakterinės infekcijos, kai rentgenograma neinformatyvi.',
             'Difereninei diagnostikai (pvz., PATE).'
           ]
         },
@@ -271,10 +272,13 @@ export default {
           {pointText:'Visiems pacientams, neturintiems kontraindikacijų, skiriami antikoaguliantai (įprastai MMMH).',
           subpoints:[
           ]},
-          {pointText:'Detalios nadroparino skyrimo <a href="http://www.hotg.lt/nadroparin/">gairės</a>. Nadroparino dozė koreguojama pagal svorį (iki 70 kg– 0,3 ml kas 12 val.; daugiau nei 70 kg – 0,6 ml kas 12 val.) ir atsižvelgiant į inkstų funkciją.',
+          {pointText:'Detalios nadroparino skyrimo <a href="http://www.hotg.lt/nadroparin/">gairės</a>.',
           subpoints:[
           ]},
-          {pointText:'Pacientams, vartojantiems antikoaguliantus, skirti pagal <a href="https://www.uptodate.com/contents/image?imageKey=HEME%2F128045&topicKey=ID%2F127454&source=see_link">pridedamą lentelę.</a>',
+          {pointText:'<b>ATNAUJINTA!</b> Rekomenduojama visiems dėl COVID-19 hospitalizuotiems pacientams skirti profilaktines antikoaguliantų dozės, nes gydomųjų dozių nauda neįrodyta, jas vartojant didėja kraujavimo rizika.',
+          subpoints:[
+          ]},
+          {pointText:'Profilaktinė Nadroparino dozė koreguojama pagal svorį (iki 70 kg – 0,3 ml kas 24 val.; daugiau nei 70 kg – 0,6 ml kas 24 val.) ir atsižvelgiant į inkstų funkciją. Gydomoji dozė skiriama pagal indikacijas (trombemboliniai įvykiai, GVT, prieširdžių virpėjimas ir kt.).',
           subpoints:[
           ]},
           {pointText:'Atsiradus kraujavimui, antikoaguliantai nedelsiant nutraukiami.',
@@ -283,15 +287,15 @@ export default {
         ]},
         {title:'EMPIRINIS ANTIBAKTERINIS GYDYMAS',
         points:[
-          {pointText:'Sergant COVID-19 nelabai būdingos bakterinės superinfekcijos',
+          {pointText:'Sergant COVID-19 bakterinės superinfekcijos retos.',
           subpoints:[]},
           {pointText:'Skiriamas tik esant stipriam bakterinės superinfekcijos įtarimui',
           subpoints:[
-            'Nauja karščiavimo banga ir nauja konsolidacijos zona plaučių rentgene;',
+            'Nauja karščiavimo banga ir nauja konsolidacijos zona plaučių rentgenogramoje;',
             'Plaučių KT bakterinei pneumonijai būdingi požymiai;',
             ' Reikšmingas CRB, PCT didėjimas (atkreipti dėmesį, kad vėlyvose ligos stadijose PCT nepadeda patikimai diferencijuoti virusinės ir bakterinės pneumonijos);',
             'Pacientai, turintys rijimo sutrikimų, kai įtariama aspiracija;',
-            'Kraujo ir šlapimo bei skreplių pasėliai prieš skiriant pirmąją antibiotikų dozę.'
+            'Būtini kraujo ir šlapimo bei skreplių pasėliai prieš skiriant pirmąją antibiotikų dozę. Skreplius, bronchų aspiratą, BAL skystį visada papildomai pasėti ir dėl grybelinių sukėlėjų.'
             ]},]},
         {title:'ANTIHIPERTENZINIS GYDYMAS',
         points:[
@@ -404,6 +408,9 @@ export default {
             '1 diena: 200 mg Remdesiviro skiesti su 250 ml NaCl 0,9%; lašinti į veną per 30-120 min.',
             '2-5 dienos: 100 mg Remdesiviro skiesti su 250 ml NaCl 0,9%, lašinti į veną per 30-120 min.'
           ]},
+          {pointText:'Nėščiosioms ir žindyvėms vietoj Deksametazono skiriamas Prednizolonas 40 mg p/o arba Hidrokortizonas 80 mg į/v 1 k/d.',
+          subpoints:[
+          ]},
 
         ]},
         {title:'sO2 ≤ 94% HIGH-FLOW / DPV**',
@@ -421,6 +428,9 @@ export default {
             'AKS (ypač hipertenzija sergantiems pacientams).',
             'Sujaudinimą (skirti pirmoje dienos pusėje).',
             'VT dirginimą (papildomai skirti Omeprazolį profilaktikai)'
+          ]},
+          {pointText:'Nėščiosioms ir žindyvėms vietoj Deksametazono skiriamas Prednizolonas 40 mg p/o arba Hidrokortizonas 80 mg į/v 1 k/d.',
+          subpoints:[
           ]},
           {pointText:'**Kai COVID-19 simptomų trukmė yra <5-7 dienos ir hospitalizavus iškart yra high-flow / DPV indikacijos, spręsti dėl remdesiviro skyrimo individualiai; ieškoti kitų / papildomų kvėpavimo nepakankamumo priežasčių.',
           subpoints:[
